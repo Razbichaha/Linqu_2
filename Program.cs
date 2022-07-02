@@ -9,7 +9,7 @@ namespace Linqu_2
         static void Main(string[] args)
         {
             ProgramCore programCore = new();
-            programCore.StartAmnesty();
+            programCore.StartWorkingWithPrisoners();
         }
     }
 
@@ -23,7 +23,7 @@ namespace Linqu_2
             GenerateBase();
         }
 
-        internal void StartAmnesty()
+        internal void StartWorkingWithPrisoners()
         {
             Console.Clear();
             Console.WriteLine("База данных перед амнистией");
@@ -51,7 +51,9 @@ namespace Linqu_2
         private void ShowPolitical()
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Амнистия");
+            Console.ForegroundColor = ConsoleColor.White;
 
             foreach (Perpetrator perpetrator in _perpetrators)
             {
@@ -65,7 +67,9 @@ namespace Linqu_2
         private void ShowCriminals()
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Список уголовников");
+            Console.ForegroundColor = ConsoleColor.White;
 
             var perpetrators = from Perpetrator in _perpetrators
                                where Perpetrator.Status == "Уголовное"
@@ -83,7 +87,9 @@ namespace Linqu_2
                           where Perpetrator.Status == "Амнистирован"
                           select Perpetrator;
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Список амнистипрованных");
+            Console.ForegroundColor = ConsoleColor.White;
 
             foreach (Perpetrator perpetrator in amnesty)
             {
