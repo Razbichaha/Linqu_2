@@ -15,11 +15,8 @@ namespace Linqu_2
         {
             ProgramCore programCore = new();
             programCore.StartAmnesty();
-
         }
     }
-
-
 
     class ProgramCore
     {
